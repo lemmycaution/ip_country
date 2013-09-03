@@ -18,7 +18,6 @@ Or install it yourself as:
     $ gem install ipcountry
 
 ## Usage
-First you need to obtain geo_ip.dat file from Maxmind
 ```
 IPCountry.init("path/to/geo_ip.dat") # loads geoip.dat and country data
 
