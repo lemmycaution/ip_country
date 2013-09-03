@@ -13,7 +13,7 @@ module IPCountry
     # Load data into memory
     def init db_file
       @@geoip     = GeoIP.new(db_file)
-      @@countries = CSV.read("#{root}/data/country_info.csv", {col_sep: "\t", headers: true, header_converters: [:symbol,:downcase]})
+      @@countries = CSV.read("#{root}/data/country_info.tsv", {col_sep: "\t", headers: true, header_converters: [:symbol,:downcase]})
       @@countries = @@countries.reduce({}){|arr,c| arr[c[0]] = c; arr}
     end
   
