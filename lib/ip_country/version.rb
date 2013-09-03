@@ -1,0 +1,3 @@
+module IPCountry
+  VERSION = "0.0.1"
+end
