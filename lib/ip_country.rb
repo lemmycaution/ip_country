@@ -19,6 +19,7 @@ module IPCountry
   
     # Detailed country info
     def info ip_or_code
+      raise RuntimeError.new("GeoIP not initialized") unless @@geoip
       if ip_or_code =~ /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
         info find(ip_or_code).country_code2
       elsif ip_or_code =~ /^[A-Z]{2}$/
@@ -30,6 +31,7 @@ module IPCountry
 
     # Ip to Country
     def find ip
+      raise RuntimeError.new("GeoIP not initialized") unless @@geoip
       raise ArgumentError.new("IP can not blank") if ip.nil?
       @@geoip.country(ip)
     end
