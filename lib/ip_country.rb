@@ -5,11 +5,15 @@ require "ip_country/version"
 module IPCountry
   
   class << self
+    
+    def root
+      File.expand_path '../..', __FILE__
+    end
 
     # Load data into memory
     def init db_file
       @@geoip     = GeoIP.new(db_file)
-      @@countries = CSV.read("data/country_info.csv", {col_sep: "\t", headers: true, header_converters: [:symbol,:downcase]})
+      @@countries = CSV.read("#{root}/data/country_info.csv", {col_sep: "\t", headers: true, header_converters: [:symbol,:downcase]})
       @@countries = @@countries.reduce({}){|arr,c| arr[c[0]] = c; arr}
     end
   

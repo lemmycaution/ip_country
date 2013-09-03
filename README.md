@@ -7,7 +7,7 @@ ISO, ISO3, ISO-Numeric, fips, Country, Capital, Area(in sq km), Population, Cont
 
 Add this line to your application's Gemfile:
 
-    gem 'ipcountry'
+    gem 'ip_country'
 
 And then execute:
 
@@ -15,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ipcountry
+    $ gem install ip_country
 
 ## Usage
 ```
